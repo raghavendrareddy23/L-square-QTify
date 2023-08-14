@@ -1,0 +1,28 @@
+.hero{
+    background-color: var(--color-black);
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 270px;
+    width: 100vw;
+}
+
+.hero_text{
+    text-align: center;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+}
+
+#text1{
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.hero_img{
+    padding-left: 20px;
+    width: 212px;
+    height: 212px;
+    flex-shrink: 0;
+}
