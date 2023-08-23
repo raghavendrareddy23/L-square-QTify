@@ -1,24 +1,16 @@
-import NavBar from './components/NavBar/NavBar'
-import Hero from './components/Hero/Hero'
-import Card from './components/Cards/Card';
-import CardComponent from './components/Card/CardComponent';
-import image from './Assets/Rectangle 2138.png'
-import styles from './App.module.css'
-
+import NavBar from "./components/NavBar/NavBar";
+import Hero from "./components/Hero/Hero";
+import Card from "./components/Card/Card";
+import { fetchTopAlbum, fetchNewAlbums } from "./api/api";
+import Section from './components/Section/Section'
 
 function App() {
   return (
     <>
       <NavBar />
       <Hero />
-      <div className= {styles.container}>
-        <CardComponent />
-        <Card
-          Card_Image={image}
-          Title="100 Follows"
-          Description="Bollywood Tops"
-        />
-      </div>
+      <Section title="Top Album" dataSource={fetchTopAlbum} type="album" />
+      <Section title="New Album" dataSource={fetchNewAlbums} type="album" />
     </>
   );
 }
