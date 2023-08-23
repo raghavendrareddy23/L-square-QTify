@@ -6,7 +6,7 @@ const Card = ({ data, type }) => {
   if (!data || !data.image || !data.follows || !data.title || !data.songs) {
     return null;
   }
-  console.log("Card dta: ", data);
+
 
   const getCard = (type) => {
     switch (type) {
@@ -36,7 +36,7 @@ const Card = ({ data, type }) => {
           </Tooltip>
         );
       case "song": {
-        const { image, likes, title } = data;
+        const { image, title } = data;
 
         return (
           <div className={styles.wrapper}>
@@ -45,7 +45,7 @@ const Card = ({ data, type }) => {
               <div className={styles.banner}>
                 <div className={styles.banner}>
                   <Chip
-                    label={`${data.follows} Follows`}
+                    label={`${data.likes} likes`}
                     className={styles.chip}
                     size="small"
                   />
