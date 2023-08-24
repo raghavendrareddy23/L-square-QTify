@@ -36,12 +36,12 @@ const Card = ({ data, type }) => {
           </Tooltip>
         );
       case "song": {
-        const { image, title } = data;
+        // const { image, likes, title } = data;
 
         return (
           <div className={styles.wrapper}>
             <div className={styles.card}>
-              <img src={image} alt="song" loading="lazy" />
+              <img src={data.image} alt="song" loading="lazy" />
               <div className={styles.banner}>
                 <div className={styles.banner}>
                   <Chip
@@ -53,7 +53,7 @@ const Card = ({ data, type }) => {
               </div>
             </div>
             <div className={styles.titleWrapper}>
-              <p>{title}</p>
+              <p>{data.title}</p>
             </div>
           </div>
         );

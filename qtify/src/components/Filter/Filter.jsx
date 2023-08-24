@@ -31,8 +31,13 @@ function Filter({ data, selectFilterIndex, setSelectFilterIndex }) {
               },
             }}
           >
-            {data.map((ele) => (
-              <Tab className={styles.tab} label={ele.label} {...a11yProps(0)} />
+            {data.map((ele, index) => (
+              <Tab
+                className={styles.tab}
+                label={ele.label}
+                key={ele.key} // Assign a unique key to each Tab
+                {...a11yProps(index)} // Pass the correct index to a11yProps
+              />
             ))}
           </Tabs>
         </Box>

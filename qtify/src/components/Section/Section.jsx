@@ -20,7 +20,7 @@ const Section = ({ title, dataSource, filterSource, type }) => {
     if (filterSource) {
       filterSource().then((response) => {
         const { data } = response;
-        setFilters([...filters, ...data]);
+        setFilters([{ key: "all", label: "All" }, ...data]);
       });
     }
   }, [filterSource, filters]);

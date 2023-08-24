@@ -19,7 +19,6 @@ const Controls = ({ data }) => {
 };
 
 const Carousel = ({ data, renderCardComponent }) => {
-  console.log("Data is: ", data)
   return (
     <div className={styles.wrapper}>
       <Swiper
