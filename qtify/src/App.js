@@ -8,14 +8,21 @@ import {
 } from "./api/api";
 import Section from "./components/Section/Section";
 import Accordian from "./components/Accordian/Accordian"
+import axios from "axios";
+import {data} from './Data/Data'
+
+
 
 function App() {
+  // const generateSongs = async()=>{
+  //   const response = await axios.get(data)
+  // }
   return (
     <>
       <NavBar />
       <Hero />
-      <Section title="Top Album" dataSource={fetchTopAlbum} type="album" />
-      <Section title="New Album" dataSource={fetchNewAlbums} type="album" />
+      {/* <Section title="Top Album" dataSource={fetchTopAlbum} type="album" />
+      <Section title="New Album" dataSource={fetchNewAlbums} type="album" /> */}
       <hr
         style={{
           background: "var(--color-primary)",
@@ -23,11 +30,13 @@ function App() {
           border: "none",
         }}
       />
+      {console.log("Fetching the songs: ",data)}
+      {/* {console.log("Filtering songs: ",fetchFilters)} */}
       <Section
         title="Songs"
-        dataSource={fetchSongs}
-        filterSource={fetchFilters}
-        type="song"
+        dataSource={data}
+        // filterSource={fetchFilters}
+        type="songs"
       />
       <hr
         style={{

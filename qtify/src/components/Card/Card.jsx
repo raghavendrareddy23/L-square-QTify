@@ -6,7 +6,7 @@ const Card = ({ data, type }) => {
   if (!data || !data.image || !data.follows || !data.title || !data.songs) {
     return null;
   }
-
+  console.log("data", data)
 
   const getCard = (type) => {
     switch (type) {
@@ -35,29 +35,31 @@ const Card = ({ data, type }) => {
             </div>
           </Tooltip>
         );
-      case "song": {
-        // const { image, likes, title } = data;
-
-        return (
-          <div className={styles.wrapper}>
-            <div className={styles.card}>
-              <img src={data.image} alt="song" loading="lazy" />
-              <div className={styles.banner}>
-                <div className={styles.banner}>
-                  <Chip
-                    label={`${data.likes} likes`}
-                    className={styles.chip}
-                    size="small"
-                  />
+        case "songs":
+          return (
+            <Tooltip
+              title={`${data.songs.length} songs`}
+              className={styles.tooltip}
+              placement="top"
+              arrow
+            >
+              <div className={styles.wrapper}>
+                <div className={styles.card}>
+                  <img src={data.image} alt="album" />
+                  <div className={styles.banner}>
+                    <Chip
+                      label={`${data.likes} Likes`}
+                      className={styles.chip}
+                      size="small"
+                    />
+                  </div>
+                </div>
+                <div className={styles.titleWrapper}>
+                  <p>{data.title}</p>
                 </div>
               </div>
-            </div>
-            <div className={styles.titleWrapper}>
-              <p>{data.title}</p>
-            </div>
-          </div>
-        );
-      }
+            </Tooltip>
+          );
 
       default:
         return null;

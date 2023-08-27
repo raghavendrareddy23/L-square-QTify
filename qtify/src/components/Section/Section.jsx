@@ -10,11 +10,16 @@ const Section = ({ title, dataSource, filterSource, type }) => {
   const [selectFilterIndex, setSelectFilterIndex] = useState(0);
   const [carouselToggle, setCarouselToggle] = useState(true);
 
-  useEffect(() => {
-    dataSource().then((data) => {
-      setCards(data);
-    });
-  }, [dataSource]);
+  // useEffect(() => {
+  //   dataSource().then((data) => {
+  //     setCards(data);
+  //   });
+  // }, [dataSource]);
+  
+
+  useEffect(()=>{
+    setCards(dataSource)
+  }, [])
 
   useEffect(() => {
     if (filterSource) {
@@ -43,7 +48,7 @@ const Section = ({ title, dataSource, filterSource, type }) => {
           {carouselToggle ? "Show all" : "Collapse"}
         </h4>
       </div>
-
+    
       {filterSource && (
         <Filter
           data={filters}
@@ -55,6 +60,7 @@ const Section = ({ title, dataSource, filterSource, type }) => {
       <div className={styles.cardWrapper}>
         {!carouselToggle ? (
           <div className={styles.wrapper}>
+            {console.log(filteredCards)}
             {filteredCards?.map((item) => (
               <Card data={item} type={type} key={item.id} />
             ))}
