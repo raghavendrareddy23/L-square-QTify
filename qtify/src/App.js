@@ -10,7 +10,6 @@ import Section from "./components/Section/Section";
 import Accordian from "./components/Accordian/Accordian"
 
 function App() {
-  console.log("songs: ",fetchFilters);
   return (
     <>
       <NavBar />
