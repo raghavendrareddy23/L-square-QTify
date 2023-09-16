@@ -13,5 +13,3 @@ const SearchBar = ({placeholder}) => {
     </form>
   )
 }
-
-export default SearchBar

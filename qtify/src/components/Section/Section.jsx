@@ -60,7 +60,6 @@ const Section = ({ title, dataSource, filterSource, type }) => {
       <div className={styles.cardWrapper}>
         {!carouselToggle ? (
           <div className={styles.wrapper}>
-            {console.log(filteredCards)}
             {filteredCards?.map((item) => (
               <Card data={item} type={type} key={item.id} />
             ))}
@@ -75,5 +74,3 @@ const Section = ({ title, dataSource, filterSource, type }) => {
     </div>
   );
 };
-
-export default Section;

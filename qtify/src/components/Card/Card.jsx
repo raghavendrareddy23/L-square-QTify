@@ -37,12 +37,6 @@ const Card = ({ data, type }) => {
         );
         case "songs":
           return (
-            <Tooltip
-              title={`${data.songs.length} songs`}
-              className={styles.tooltip}
-              placement="top"
-              arrow
-            >
               <div className={styles.wrapper}>
                 <div className={styles.card}>
                   <img src={data.image} alt="album" />
@@ -58,7 +52,6 @@ const Card = ({ data, type }) => {
                   <p>{data.title}</p>
                 </div>
               </div>
-            </Tooltip>
           );
 
       default:
