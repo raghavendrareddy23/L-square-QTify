@@ -3,9 +3,9 @@ import { Tooltip, Chip } from "@mui/material";
 import styles from "./Card.module.css";
 
 const Card = ({ data, type }) => {
-  if (!data || !data.image || !data.follows || !data.title || !data.songs) {
-    return null;
-  }
+  // if (!data || !data.image || !data.follows || !data.title || !data.songs) {
+  //   return null;
+  // }
   console.log("data", data)
 
   const getCard = (type) => {
@@ -13,7 +13,7 @@ const Card = ({ data, type }) => {
       case "album":
         return (
           <Tooltip
-            title={`${data.songs.length} songs`}
+            title={`15songs`}
             className={styles.tooltip}
             placement="top"
             arrow
